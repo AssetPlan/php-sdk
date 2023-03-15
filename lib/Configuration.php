@@ -434,68 +434,68 @@ class Configuration
      */
     public function getHostSettings()
     {
-        return [
-          [
+        return array(
+          array(
             "url" => "https://api.mercadolibre.com",
             "description" => "The Marketplace API Endpoint",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.ar",
             "description" => "Authorization EndPoint for MLA",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolivre.com.br",
             "description" => "Authorization EndPoint for MLB",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.co",
             "description" => "Authorization EndPoint for MCO",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.mx",
             "description" => "Authorization EndPoint for MLM",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.uy",
             "description" => "Authorization EndPoint for MLU",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.cl",
             "description" => "Authorization EndPoint for MLC",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.cr",
             "description" => "Authorization EndPoint for MCR",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.ec",
             "description" => "Authorization EndPoint for MEC",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.ve",
             "description" => "Authorization EndPoint for MLV",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.pa",
             "description" => "Authorization EndPoint for MPA",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.pe",
             "description" => "Authorization EndPoint for MLP",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.do",
             "description" => "Authorization EndPoint for MRD",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.bo",
             "description" => "Authorization EndPoint for MBO",
-          ],
-          [
+          ),
+          array(
             "url" => "https://auth.mercadolibre.com.py",
             "description" => "Authorization EndPoint for MPY",
-          ]
-        ];
+          )
+        );
     }
 
     /**
@@ -508,7 +508,7 @@ class Configuration
     public function getHostFromSettings($index, $variables = null)
     {
         if (null === $variables) {
-            $variables = [];
+            $variables = array();
         }
 
         $hosts = $this->getHostSettings();
@@ -524,7 +524,7 @@ class Configuration
         // go through variable and assign a value
         foreach ($host["variables"] as $name => $variable) {
             if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
-                if (in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
+                if (in_array($variables[$name], $variable["enum_values"])) { // check to see if the value is in the enum
                     $url = str_replace("{".$name."}", $variables[$name], $url);
                 } else {
                     throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".join(',', $variable["enum_values"]).".");
