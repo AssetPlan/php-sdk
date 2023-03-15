@@ -410,7 +410,7 @@ class RestClientApi
         $resourcePath = str_replace('%7B', '{', $resourcePath);
         $resourcePath = str_replace('%7D', '}', $resourcePath);
         $resourcePath = str_replace('%2C', ',', $resourcePath);
-        $already_querys = ($encode_url != $resourcePath) ? true : false;
+        $already_querys = ($encode_url !== $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
         $query = Query::build($queryParams);
@@ -715,7 +715,7 @@ class RestClientApi
         $resourcePath = str_replace('%7B', '{', $resourcePath);
         $resourcePath = str_replace('%7D', '}', $resourcePath);
         $resourcePath = str_replace('%2C', ',', $resourcePath);
-        $already_querys = ($encode_url != $resourcePath) ? true : false;
+        $already_querys = ($encode_url !== $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
         $query = Query::build($queryParams);
@@ -1034,7 +1034,7 @@ class RestClientApi
         $resourcePath = str_replace('%7B', '{', $resourcePath);
         $resourcePath = str_replace('%7D', '}', $resourcePath);
         $resourcePath = str_replace('%2C', ',', $resourcePath);
-        $already_querys = ($encode_url != $resourcePath) ? true : false;
+        $already_querys = ($encode_url !== $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
         $query = Query::build($queryParams);
@@ -1353,7 +1353,7 @@ class RestClientApi
         $resourcePath = str_replace('%7B', '{', $resourcePath);
         $resourcePath = str_replace('%7D', '}', $resourcePath);
         $resourcePath = str_replace('%2C', ',', $resourcePath);
-        $already_querys = ($encode_url != $resourcePath) ? true : false;
+        $already_querys = ($encode_url !== $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
         $query = Query::build($queryParams);
